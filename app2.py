@@ -26,7 +26,6 @@ sentiment_trend = df.groupby([df['Date'].dt.to_period('M'), 'Sentiment Label']).
 months = ['June', 'July', 'August']
 values = {
     'Mixed': sentiment_trend['Mixed'],
-    'Negative': sentiment_trend['Negative'],
     'Neutral': sentiment_trend['Neutral'],
     'Positive': sentiment_trend['Positive']
 }
