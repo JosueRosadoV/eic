@@ -11,16 +11,24 @@ df['Date'] = pd.to_datetime(df['Date'])
 st.title('Eagle Island Camp sentiment analysis project')
 st.markdown('Explore different trends and patterns of sentiments in reviews by campers, parents and staff throughout camp season.')
 
-#filter
+# Sidebar Filters
+with st.sidebar:
+    st.header("Filter")
+    program_filter = st.selectbox("Choose a program:", ["All"] + sorted(df['Program Name'].unique().tolist()))
+
+# Apply filter
+if program_filter != "All":
+    df = df[df["Program Name"] == program_filter]
 
 st.subheader('Sentiment trends over time')
+sentiment_trend = df.groupby([df['Date'].dt.to_period('M'), 'Sentiment Label']).size().unstack().fillna(0)
 
 months = ['June', 'July', 'August']
 values = {
-    'Mixed': (5,3,6),
-    'Negative': (3,5,2),
-    'Neutral': (4,6,6),
-    'Positive': (6,4,10)
+    'Mixed': sentiment_trend['Mixed'],
+    'Negative': sentiment_trend['Negative'],
+    'Neutral': sentiment_trend['Neutral'],
+    'Positive': sentiment_trend['Positive']
 }
 x = np.arange(len(months))
 width = 0.2
