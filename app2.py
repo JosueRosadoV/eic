@@ -64,3 +64,5 @@ for i in bag:
 frequencies_df = pd.DataFrame({'Word': bag, 'Frequency': freq})
 st.subheader('Frequencies of words')
 frequencies_df
+if program_filter == "All":
+    st.subheader('Suggestions based on the general trends and word clouds patterns')
