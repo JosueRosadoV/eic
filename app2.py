@@ -43,6 +43,7 @@ ax.set_title('Sentiment trends')
 ax.set_xticks(x + width, months)
 ax.set_ylabel('Count')
 ax.legend();
+ax.set_ylim(10)
 st.pyplot(fig)
 
 st.subheader('Word clouds for most used words in each sentiment label')
