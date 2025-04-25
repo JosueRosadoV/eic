@@ -54,3 +54,5 @@ for sentiment in ["Positive", "Negative", "Neutral", 'Mixed']:
         ax.imshow(wordcloud, interpolation="bilinear")
         ax.axis("off")
         st.pyplot(fig)
+    else:
+        st.markdown('No data available for this sentiment label.')
