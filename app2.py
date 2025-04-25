@@ -68,7 +68,7 @@ frequencies_df
 if program_filter == "All":
     st.subheader('Suggestions based on the general trends and word clouds patterns')
     st.markdown("""
-- **Suggestion 1**: xxxxxxxx.
-- **Suggestion 2**: xxxxx.
-- **Suggestion 3**: xxxxxx.
+- **Campfire nights** and **supportive counselors** are frequently mentioned in positive reviews.
+- **Bugs**, **cold nights**, and **lack of indoor alternatives** appear in negative reviews.
+- Increase **social bonding events**, provide **more weather-related comfort**, and **shorten demanding activities** like full-day sailing.
 """)
