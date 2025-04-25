@@ -57,4 +57,9 @@ for sentiment in ["Positive", "Negative", "Neutral", 'Mixed']:
         st.pyplot(fig)
     else:
         st.markdown('No data available for this sentiment label.')
-df
+bag = ['Best summer', 'learned', 'canoe', 'met', 'sailing', 'great', 'Love', 'bugs', 'cold', 'night', 'free time']
+freq = []
+for i in bag:
+    freq.append(' '.join(df['Feedback Text']).count(i))
+frequencies_df = pd.DataFrame({'Word': bag, 'Frequency': freq})
+frequencies_df
