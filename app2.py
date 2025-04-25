@@ -1,5 +1,5 @@
-import streamlit as st
 import numpy as np
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
@@ -24,17 +24,17 @@ st.subheader('Sentiment trends over time')
 sentiment_trend = df.groupby([df['Date'].dt.to_period('M'), 'Sentiment Label']).size().unstack().fillna(0)
 
 months = ['June', 'July', 'August']
-values = {
-    'Mixed': sentiment_trend['Mixed'],
-    'Neutral': sentiment_trend['Neutral'],
-    'Positive': sentiment_trend['Positive']
-}
+cols = {}
+for i in trends.columns:
+    cols[f'{i}'] = trends[f'{i}']
+
 x = np.arange(len(months))
 width = 0.2
 multiplier = 0
 
+
 fig, ax = plt.subplots(layout='constrained')
-for sentiment, count in values.items():
+for sentiment, count in cols.items():
     offset = width * multiplier
     rects = ax.bar(x + offset, count, width, label=sentiment)
     ax.bar_label(rects, padding=1)
