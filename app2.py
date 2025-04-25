@@ -45,9 +45,7 @@ ax.set_ylabel('Count')
 ax.legend();
 st.pyplot(fig)
 
-st.subheader('Word clouds for most encountered words in each sentiment label')
-
-for sentiment in ["Positive", "Negative", "Neutral", 'Mixed']:
+for sentiment in ["Positive", "Negative", "Neutral"]:
     st.markdown(f"**{sentiment} Feedback**")
     text = " ".join(df[df["Sentiment Label"] == sentiment]["Feedback Text"])
     if text:
@@ -56,5 +54,3 @@ for sentiment in ["Positive", "Negative", "Neutral", 'Mixed']:
         ax.imshow(wordcloud, interpolation="bilinear")
         ax.axis("off")
         st.pyplot(fig)
-    else:
-        st.write("No data available.")
