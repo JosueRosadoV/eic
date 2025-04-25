@@ -44,3 +44,5 @@ ax.set_xticks(x + width, months)
 ax.set_ylabel('Count')
 ax.legend();
 st.pyplot(fig)
+
+st.subheader('Word clouds for most encountered words in each sentiment label')
