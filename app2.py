@@ -45,7 +45,7 @@ ax.set_ylabel('Count')
 ax.legend();
 st.pyplot(fig)
 
-for sentiment in ["Positive", "Negative", "Neutral"]:
+for sentiment in ["Positive", "Negative", "Neutral", 'Mixed']:
     st.markdown(f"**{sentiment} Feedback**")
     text = " ".join(df[df["Sentiment Label"] == sentiment]["Feedback Text"])
     if text:
