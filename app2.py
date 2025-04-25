@@ -46,3 +46,15 @@ ax.legend();
 st.pyplot(fig)
 
 st.subheader('Word clouds for most encountered words in each sentiment label')
+
+for sentiment in ["Positive", "Negative", "Neutral", 'Mixed']:
+    st.markdown(f"**{sentiment} Feedback**")
+    text = " ".join(df[df["Sentiment Label"] == sentiment]["Feedback Text"])
+    if text:
+        wordcloud = WordCloud(width=800, height=300, background_color="white").generate(text)
+        fig, ax = plt.subplots()
+        ax.imshow(wordcloud, interpolation="bilinear")
+        ax.axis("off")
+        st.pyplot(fig)
+    else:
+        st.write("No data available.")
