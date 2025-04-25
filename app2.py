@@ -26,7 +26,7 @@ sentiment_trend = df.groupby([df['Date'].dt.to_period('M'), 'Sentiment Label']).
 months = ['June', 'July', 'August']
 cols = {}
 for i in sentiment_trend.columns:
-    cols[f'{i}'] = trends[f'{i}']
+    cols[f'{i}'] = sentiment_trend[f'{i}']
 
 x = np.arange(len(months))
 width = 0.2
