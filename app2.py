@@ -45,6 +45,7 @@ ax.set_ylabel('Count')
 ax.legend();
 st.pyplot(fig)
 
+st.subheader('Word clouds for most used words in each sentiment label')
 for sentiment in ["Positive", "Negative", "Neutral", 'Mixed']:
     st.markdown(f"**{sentiment} Feedback**")
     text = " ".join(df[df["Sentiment Label"] == sentiment]["Feedback Text"])
