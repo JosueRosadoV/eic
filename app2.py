@@ -62,4 +62,5 @@ freq = []
 for i in bag:
     freq.append(' '.join(df['Feedback Text']).count(i))
 frequencies_df = pd.DataFrame({'Word': bag, 'Frequency': freq})
+st.subheader('Frequencies of words')
 frequencies_df
