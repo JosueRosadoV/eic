@@ -67,3 +67,8 @@ st.subheader('Frequencies of words')
 frequencies_df
 if program_filter == "All":
     st.subheader('Suggestions based on the general trends and word clouds patterns')
+    st.markdown("""
+- **Suggestion 1**: xxxxxxxx.
+- **Suggestion 2**: xxxxx.
+- **Suggestion 3**: xxxxxx.
+""")
